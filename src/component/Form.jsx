@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { IoIosSend } from 'react-icons/io';
 
 function Form(props) {
     const [item, setItem] = useState('');
@@ -32,10 +33,14 @@ function Form(props) {
     };
 
     return (
-        <form onSubmit={submitHandler}>
-            <label htmlFor="item">Item : </label>
-            <input type="text" name="item" id="item" value={item} onChange={keyStrokeHandler}/>
-            <button type="submit">Add+</button>
+        <form onSubmit={submitHandler} className="flex border-2 border-slate-300 py-10 m-7 px-9 rounded-md space-x-3 items-center">
+            <div>
+                <label htmlFor="item" className="font-semibold">Enter : </label>
+                <input type="text" name="item" id="item" value={item} onChange={keyStrokeHandler} className="border-solid border-2 border-slate-200 rounded-md ml-2 py-2 px-6" placeholder="Enter a value..."/>
+            </div>
+            <div>
+                <button type="submit" className="border-solid border-2 bg-blue-500 border-blue-500 text-white py-1 px-3 rounded-sm hover:border-blue-400 flex items-center space-x-1">Add<IoIosSend/></button>
+            </div>
         </form>
     );
 }

@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Form from "./component/Form";
 import Items from "./component/Items";
 
@@ -54,10 +54,14 @@ function App() {
   };
 
   return (
-    <Fragment>
-      <Form onAddNewItem={newItemHandler}/>
-      <Items items={items} onEditCall={editClickHandler} onDeleteCall={deleteClickHandler}/>
-    </Fragment>
+    <div className="flex flex-col justify-center items-center">
+      <div>
+        <Form onAddNewItem={newItemHandler}/>
+      </div>
+      <div>
+        <Items items={items} onEditCall={editClickHandler} onDeleteCall={deleteClickHandler}/>
+      </div>
+    </div>
   );
 }
 
